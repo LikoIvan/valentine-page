@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeuse St Valentin !</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+            color: #d63384;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            padding: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .heart {
+            font-size: 100px;
+            color: #ff3366;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff3366;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #cc0044;
+        }
+        /* Анимация падающих сердец */
+        .heart-fall {
+            position: absolute;
+            top: -10%;
+            color: #ff3366;
+            font-size: 24px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        /* Винни-Пух */
+        .winnie {
+            width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Joyeuse St Valentin !</h1>
+        <p>Mon amour, tu es ce qu'il y a de plus beau dans ma vie. Je suis immensément heureux de t'avoir à mes côtés et reconnaissant pour chaque moment passé avec toi !</p>
+        <p>Amour, votre Ivan 💖</p>
+        <a class="button" href="#">Faites-moi un câlin ! 🤗</a>
+        <br>
+        <img class="winnie" src="https://i.etsystatic.com/47233908/r/il/e65892/6556320605/il_1588xN.6556320605_lyw3.jpg" alt="Винни-Пух с валентинкой">
+    </div>
+
+    <!-- Скрипт для создания падающих сердец -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart-fall");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
