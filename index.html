@@ -80,10 +80,13 @@
             width: 300px;
             margin-top: 20px;
         }
+        /* Видео */
+        .music-container {
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="heart">❤️</div>
         <h1>Joyeuse St Valentin !</h1>
@@ -92,8 +95,13 @@
         <a class="button" href="#">Faites-moi un câlin ! 🤗</a>
         <br>
         <img class="winnie" src="https://i.etsystatic.com/47233908/r/il/e65892/6556320605/il_1588xN.6556320605_lyw3.jpg" alt="Винни-Пух с валентинкой">
+        
+        <!-- Встроенный YouTube-плеер -->
+        <div class="music-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YkLLcIKhJ64?autoplay=1&loop=1&playlist=YkLLcIKhJ64" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
-
+    
     <!-- Скрипт для создания падающих сердец -->
     <script>
         function createHeart() {
@@ -110,6 +118,5 @@
         }
         setInterval(createHeart, 300);
     </script>
-
 </body>
 </html>
